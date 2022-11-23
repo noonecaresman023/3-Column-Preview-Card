@@ -15,6 +15,7 @@ font-family: 'Lexend Deca', sans-serif;
     --very-light-gray: hsl(0, 0%, 95%);
 }
 
+
 *{
     margin: 0;
     padding: 0;
@@ -35,6 +36,8 @@ body{
 .grid-container{
     display: grid;
     grid-auto-flow: row;
+    align-items: center;
+    justify-content: center;
 }
 
 h2{
@@ -63,12 +66,22 @@ article{
 .sedan-p, .SUV-p, .luxury-p{
     color: var(--active-state);
     letter-spacing: .2px;
+    line-height: 25px;
 }
 
+.sedan-button{
+    color: var(--sedan-bg-color);
+}
+.suv-button{
+    color: var(--SUV-bg-color);
+} 
+.luxury-button{
+    color: var(--luxury-bg-color);
+}
 
-button{
-    cursor: pointer;
-    mix-blend-mode: screen;
+.button{
+    display: block;
+    cursor: pointer;    
     border-radius: 30px;
     text-align: center;
     padding: 1em 3em 1em 3em;
@@ -76,9 +89,11 @@ button{
     font-family: 'Lexend Deca', sans-serif; 
     border: 2px solid white;
     background-color: white;
+    text-decoration: none;
+    mix-blend-mode: screen;
 }
 
-button:hover{
+.button:hover{
     background-color: transparent;
     color: var(--active-state);
 }
@@ -103,7 +118,10 @@ footer a{
 
 
 @media screen and (min-width: 1024px){
-
+    main{
+        max-width: 1110px;
+        margin: 0 auto;
+    }
     body{
         justify-content: center;
         align-items: center;
@@ -111,6 +129,11 @@ footer a{
     }
     .grid-container{
         grid-auto-flow: column;
+    }
+
+    .sedan-p, .SUV-p, .luxury-p{
+        height: 150px;
+        width: 220px;
     }
 
     /** for border radius for this screen */
