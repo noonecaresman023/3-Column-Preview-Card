@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+/* 
+font-family: 'Big Shoulders Display', cursive;
+font-family: 'Lexend Deca', sans-serif; 
+*/
+
+
+:root{
+    --sedan-bg-color:hsl(31, 77%, 52%);
+    --SUV-bg-color:  hsl(184, 100%, 22%);
+    --luxury-bg-color: hsl(179, 100%, 13%);
+
+    --active-state: hsla(0, 0%, 100%, 0.75);
+    --very-light-gray: hsl(0, 0%, 95%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    font-size: 15px;
+    background-color: white;
+    padding: 1em;
+    font-family: 'Lexend Deca', sans-serif; 
+}
+
+.grid-container{
+    display: grid;
+    grid-auto-flow: row;
+}
+
+h2{
+    text-transform: uppercase;
+    font-family: 'Big Shoulders Display', cursive;
+    padding: 1rem 0 1rem 0;
+    font-size: 40px;
+}
+article{
+    color: white;
+    padding: 4em;
+    
+}
+.vehicle-sedan{
+    background-color: var(--sedan-bg-color);
+    border-radius: 10px 10px 0 0;
+}
+.vehicle-SUV{
+    background-color: var(--SUV-bg-color);
+}
+.vehicle-luxury{
+    background-color: var(--luxury-bg-color);
+    border-radius: 0 0 10px 10px;
+}
+
+.sedan-p, .SUV-p, .luxury-p{
+    color: var(--active-state);
+    letter-spacing: .2px;
+}
+
+
+button{
+    cursor: pointer;
+    mix-blend-mode: screen;
+    border-radius: 30px;
+    text-align: center;
+    padding: 1em 3em 1em 3em;
+    margin: 1.5rem 0 1.5rem 0;
+    font-family: 'Lexend Deca', sans-serif; 
+    border: 2px solid white;
+    background-color: white;
+}
+
+button:hover{
+    background-color: transparent;
+    color: var(--active-state);
+}
+
+/**----------footer design-----------*/
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    gap: 1%;
+    top: 100%;
+}
+
+footer p, a{
+    font-family: 'Lexend Deca', sans-serif; ;
+}
+footer a{
+    text-decoration: none;
+    color: gray;
+}
+
+
+@media screen and (min-width: 1024px){
+
+    body{
+        justify-content: center;
+        align-items: center;
+        grid-template-rows: 1fr auto;
+    }
+    .grid-container{
+        grid-auto-flow: column;
+    }
+
+    /** for border radius for this screen */
+    .vehicle-sedan{
+        border-radius: 10px 0 0 10px;
+    }
+    .vehicle-luxury{
+        border-radius: 0 10px 10px 0;
+    }
+    footer{
+        font-size: 15px;
+    }
+
+}
